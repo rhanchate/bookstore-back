@@ -10,10 +10,16 @@ public class Book {
 @Id
 @GeneratedValue
 private Long id;
-    @Column(length = 100)
+@Column(length = 100)
 private String title;
 
 private String isbn;
+
+
+@Column( name="publication_Date")
+@Temporal(TemporalType.DATE)
+private Date publicationDate;
+
 
     public Long getId() {
         return id;
@@ -56,10 +62,6 @@ private String isbn;
     public void setPublicationDate(Date publicationDate) {
         this.publicationDate = publicationDate;
     }
-
-    @Column( name="publication_Date")
-    @Temporal(TemporalType.DATE)
-    private Date publicationDate;
 
 }
 
